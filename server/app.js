@@ -10,7 +10,7 @@ const app = express();
 connectDB();
 
 app.use(express.json());
-app.use(cors({ origin: "https://notes-app-hazel-pi.vercel.app/" }));
+app.use(cors({ origin: "https://notes-app-hazel-pi.vercel.app" }));
 
 app.get("/", (req, res) => res.send("Hello"));
 
