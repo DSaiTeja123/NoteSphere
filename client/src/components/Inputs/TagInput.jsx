@@ -33,7 +33,7 @@ function TagInput({ tags, setTags }) {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="flex items-center gap-1 text-sm text-slate-800 bg-slate-200 px-4 py-2 rounded-full"
+              className="flex items-center gap-1 text-xs sm:text-sm text-slate-800 bg-slate-200 px-3 sm:px-4 py-1 sm:py-2 rounded-full"
             >
               #{tag}
               <button
@@ -47,11 +47,11 @@ function TagInput({ tags, setTags }) {
         </div>
       )}
 
-      <div className="flex items-center gap-3 mt-4">
+      <div className="flex items-center gap-3 mt-4 flex-wrap">
         <input
           type="text"
           value={inputValue}
-          className="text-sm w-full border border-slate-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+          className="text-xs sm:text-sm w-full border border-slate-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
           placeholder="Add tags"
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
@@ -60,7 +60,7 @@ function TagInput({ tags, setTags }) {
           className="w-9 h-9 flex items-center justify-center rounded-full border border-blue-600 hover:bg-blue-600 transition-all duration-200"
           onClick={addNewTag}
         >
-          <MdAdd className="text-xl text-blue-600 hover:text-white transition-colors duration-200" />
+          <MdAdd className="text-lg sm:text-xl text-blue-600 hover:text-white transition-colors duration-200" />
         </button>
       </div>
     </div>

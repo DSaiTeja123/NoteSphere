@@ -24,15 +24,15 @@ function Navbar({ userInfo, onSearchNote, handleClickSearch }) {
   };
 
   return (
-    <div className="bg-white flex items-center justify-between px-8 py-4 shadow-md rounded-lg">
-      <h2 className="text-2xl font-semibold text-slate-900">NoteSphere</h2>
+    <div className="bg-white flex items-center justify-between px-6 sm:px-8 py-4 shadow-md rounded-lg">
+      <h2 className="text-xl sm:text-2xl font-semibold text-slate-900">NoteSphere</h2>
 
       <SearchBar
         value={searchValue}
         onChange={({ target }) => setSearchValue(target.value)}
         handleSearch={handleSearch}
         onClearSearch={onClearSearch}
-        className="w-1/3 max-w-xs"
+        className="w-full sm:w-1/3 max-w-xs"
       />
 
       <ProfileInfo userInfo={userInfo} onLogout={onLogout} />

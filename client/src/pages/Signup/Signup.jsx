@@ -58,17 +58,17 @@ function Signup() {
 
   return (
     <>
-      <div className="flex items-center justify-center min-h-screen bg-slate-50 py-12">
-        <div className="w-full sm:w-96 bg-white rounded-xl shadow-lg p-8">
+      <div className="flex items-center justify-center min-h-screen bg-slate-50 py-10 px-4 sm:px-6">
+        <div className="w-full max-w-md sm:max-w-lg bg-white rounded-2xl shadow-xl p-6 sm:p-10">
           <form onSubmit={handleSignup}>
-            <h4 className="text-3xl font-semibold mb-6 text-center text-slate-900">
+            <h4 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-slate-900">
               Signup
             </h4>
 
             <input
               type="text"
               placeholder="Name"
-              className="w-full px-4 py-3 mb-4 text-sm bg-slate-100 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+              className="w-full px-4 py-3 sm:py-3.5 mb-4 text-base bg-slate-100 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
               value={name}
               autoComplete="name"
               onChange={(e) => setName(e.target.value)}
@@ -77,7 +77,7 @@ function Signup() {
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-3 mb-4 text-sm bg-slate-100 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+              className="w-full px-4 py-3 sm:py-3.5 mb-4 text-base bg-slate-100 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
               value={email}
               autoComplete="email"
               onChange={(e) => setEmail(e.target.value)}
@@ -87,19 +87,20 @@ function Signup() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="new-password"
+              className="mb-4"
             />
 
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
             <button
               type="submit"
-              className="w-full mt-6 px-4 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 font-semibold transition-all duration-200"
+              className="w-full mt-6 px-4 py-3 sm:py-3.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 font-semibold text-base transition-all duration-200"
             >
               Create Account
             </button>
 
-            <p className="text-sm text-center mt-4 text-slate-700">
-              Already have an Account?{" "}
+            <p className="text-sm sm:text-base text-center mt-5 text-slate-700">
+              Already have an account?{" "}
               <Link
                 to="/login"
                 className="font-medium text-blue-600 hover:underline"

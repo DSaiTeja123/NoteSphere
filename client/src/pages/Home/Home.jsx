@@ -160,10 +160,10 @@ function Home() {
         handleClickSearch={handleClickSearch}
       />
 
-      <div className="container mx-auto px-4 mt-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 mt-6 sm:mt-10">
         {allNotes.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {allNotes.map((item, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            {allNotes.map((item) => (
               <NoteCard
                 key={item._id}
                 title={item.title}
@@ -174,13 +174,13 @@ function Home() {
                 onEdit={() => handleEdit(item)}
                 onDelete={() => deleteNote(item)}
                 onPinNote={() => updateIsPinned(item)}
-                className="transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                className="transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl"
               />
             ))}
           </div>
         ) : (
           <EmptyCard
-            className="mt-10"
+            className="mt-10 text-center"
             imgSrc={isSearch ? NoDataImg : AddNotesImg}
             message={
               isSearch
@@ -192,7 +192,7 @@ function Home() {
       </div>
 
       <button
-        className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-500 hover:bg-blue-600 text-white fixed right-8 bottom-10 shadow-2xl transform transition-all duration-300 ease-in-out hover:scale-110"
+        className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-full bg-blue-500 hover:bg-blue-600 text-white fixed right-4 sm:right-8 bottom-6 sm:bottom-10 shadow-2xl transform transition-all duration-300 ease-in-out hover:scale-110 z-50"
         onClick={() =>
           setOpenAddEditModal({
             isShown: true,
@@ -201,7 +201,7 @@ function Home() {
           })
         }
       >
-        <MdAdd className="text-3xl" />
+        <MdAdd className="text-2xl sm:text-3xl" />
       </button>
 
       <Modal
@@ -214,14 +214,14 @@ function Home() {
           },
         }}
         contentLabel="Add or Edit Note"
-        className="w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] max-h-[80vh] bg-white rounded-lg mx-auto mt-14 p-6 overflow-y-auto shadow-lg"
+        className="w-[92%] sm:w-[80%] md:w-[60%] lg:w-[45%] max-h-[85vh] bg-white rounded-xl mx-auto mt-12 p-4 sm:p-6 overflow-y-auto shadow-xl focus:outline-none"
       >
         <AddEditNotes
           type={openAddEditModal.type}
           noteData={openAddEditModal.data}
-          onClose={() => {
-            setOpenAddEditModal({ isShown: false, type: "add", data: null });
-          }}
+          onClose={() =>
+            setOpenAddEditModal({ isShown: false, type: "add", data: null })
+          }
           getAllNotes={getAllNotes}
           showToastMessage={showToastMessage}
         />

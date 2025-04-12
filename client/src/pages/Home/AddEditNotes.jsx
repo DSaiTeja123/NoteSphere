@@ -75,29 +75,29 @@ const AddEditNotes = ({
   };
 
   return (
-    <div className="relative p-6 bg-white rounded-xl shadow-lg max-w-lg mx-auto">
+    <div className="relative p-4 sm:p-6 bg-white rounded-xl shadow-lg w-full max-w-lg mx-auto my-4 sm:my-10 overflow-auto">
       <button
-        className="w-10 h-10 rounded-full flex items-center justify-center absolute -top-3 -right-3 bg-slate-100 hover:bg-slate-200 transition-all duration-200"
+        className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center absolute -top-3 -right-3 bg-slate-100 hover:bg-slate-200 transition-all duration-200"
         onClick={onClose}
       >
-        <MdClose className="text-xl text-slate-500" />
+        <MdClose className="text-lg sm:text-xl text-slate-500" />
       </button>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2 sm:gap-3">
         <label className="text-sm font-semibold text-slate-700">Title</label>
         <input
           type="text"
-          className="text-2xl text-slate-900 bg-transparent outline-none border-b-2 border-slate-300 focus:border-slate-500 focus:ring-0 transition-all duration-200"
+          className="text-xl sm:text-2xl text-slate-900 bg-transparent outline-none border-b-2 border-slate-300 focus:border-slate-500 focus:ring-0 transition-all duration-200"
           placeholder="Go to GYM at 5"
           value={title}
           onChange={({ target }) => setTitle(target.value)}
         />
       </div>
 
-      <div className="flex flex-col gap-3 mt-6">
+      <div className="flex flex-col gap-2 sm:gap-3 mt-4 sm:mt-6">
         <label className="text-sm font-semibold text-slate-700">Content</label>
         <textarea
-          className="text-slate-900 bg-slate-50 p-4 rounded-lg outline-none resize-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+          className="text-slate-900 bg-slate-50 p-3 sm:p-4 rounded-lg outline-none resize-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
           placeholder="Content"
           rows={6}
           value={content}
@@ -105,7 +105,7 @@ const AddEditNotes = ({
         />
       </div>
 
-      <div className="mt-6">
+      <div className="mt-4 sm:mt-6">
         <label className="text-sm font-semibold text-slate-700">Tags</label>
         <TagInput tags={tags} setTags={setTags} />
       </div>
@@ -113,7 +113,7 @@ const AddEditNotes = ({
       {error && <p className="text-red-500 text-xs pt-4">{error}</p>}
 
       <button
-        className="mt-6 w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none font-medium transition-all duration-200"
+        className="mt-5 sm:mt-6 w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none font-medium transition-all duration-200"
         onClick={handleAddNote}
       >
         {type === "edit" ? "Update" : "Add"}

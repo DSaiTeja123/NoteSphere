@@ -23,7 +23,7 @@ const Toast = ({ isShown, message, type, onClose }) => {
       onClick={onClose}
     >
       <div
-        className={`min-w-52 bg-white border shadow-2xl rounded-md relative overflow-hidden ${
+        className={`min-w-[200px] sm:min-w-[250px] md:min-w-[300px] bg-white border shadow-2xl rounded-md relative overflow-hidden ${
           type === "delete" ? "border-red-500" : "border-green-500"
         }`}
       >
@@ -39,7 +39,7 @@ const Toast = ({ isShown, message, type, onClose }) => {
               <LuCheck className="text-2xl text-green-500" />
             )}
           </div>
-          <p className="text-sm text-slate-800 font-medium">{message}</p>
+          <p className="text-sm sm:text-base text-slate-800 font-medium">{message}</p>
         </div>
         <div
           className={`absolute top-0 left-0 h-full ${

@@ -13,26 +13,35 @@ const NoteCard = ({
   onPinNote,
 }) => {
   return (
-    <div className="border rounded-2xl p-5 bg-white hover:shadow-2xl transition-all duration-300 ease-in-out">
-      <div className="flex items-start justify-between">
-        <div>
-          <h6 className="text-base font-semibold text-gray-800">{title}</h6>
-          <span className="text-xs text-gray-500">
+    <div className="border rounded-2xl p-4 sm:p-5 md:p-6 bg-white hover:shadow-2xl transition-all duration-300 ease-in-out w-full h-full">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h6 className="text-base sm:text-lg font-semibold text-gray-800 truncate">
+            {title}
+          </h6>
+          <span className="text-xs sm:text-sm text-gray-500 block">
             {moment(date).format("DD/MM/YYYY")}
           </span>
         </div>
         <MdOutlinePushPin
-          className={`cursor-pointer text-xl transition-colors duration-200 ${
+          className={`shrink-0 cursor-pointer text-xl sm:text-2xl transition-colors duration-200 ${
             isPinned ? "text-blue-600" : "text-gray-300 hover:text-blue-400"
           }`}
           onClick={onPinNote}
         />
       </div>
-      <p className="text-sm text-gray-600 mt-3">{content?.slice(0, 60)}</p>
-      <div className="flex items-center justify-between mt-4">
-        <div className="flex flex-wrap gap-1 text-xs text-gray-500">
+
+      <p className="text-sm sm:text-base text-gray-600 mt-3 line-clamp-3">
+        {content?.slice(0, 100)}
+      </p>
+
+      <div className="flex items-center justify-between mt-4 flex-wrap gap-y-2">
+        <div className="flex flex-wrap gap-1 text-xs sm:text-sm text-gray-500 max-w-[75%]">
           {tags.map((item, index) => (
-            <span key={index} className="bg-gray-100 px-2 py-0.5 rounded-full">
+            <span
+              key={index}
+              className="bg-gray-100 px-2 py-0.5 rounded-full break-words"
+            >
               {item}
             </span>
           ))}

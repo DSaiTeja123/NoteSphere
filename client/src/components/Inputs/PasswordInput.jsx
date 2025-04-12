@@ -15,16 +15,16 @@ const PasswordInput = ({ value, onChange, placeholder }) => {
         onChange={onChange}
         type={isShowPassword ? "text" : "password"}
         placeholder={placeholder || "Password"}
-        className="w-full text-sm bg-white py-3 px-4 pr-10 rounded-lg border border-slate-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
+        className="w-full text-sm sm:text-base bg-white py-3 px-4 pr-12 rounded-lg border border-slate-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
       />
       <div
         className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-slate-500 hover:text-primary transition-colors duration-200"
         onClick={toggleShowPassword}
       >
         {isShowPassword ? (
-          <FaRegEye size={20} className="text-primary" />
+          <FaRegEye size={22} className="text-primary" />
         ) : (
-          <FaRegEyeSlash size={20} className="text-slate-400" />
+          <FaRegEyeSlash size={22} className="text-slate-400" />
         )}
       </div>
     </div>
