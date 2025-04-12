@@ -32,10 +32,10 @@ function Navbar({ userInfo, onSearchNote, handleClickSearch }) {
         onChange={({ target }) => setSearchValue(target.value)}
         handleSearch={handleSearch}
         onClearSearch={onClearSearch}
-        className="w-full sm:w-1/3 max-w-xs mt-4 sm:mt-0"  {/* Added margin-top for small screens */}
+        className="w-full sm:w-1/3 max-w-xs mt-4 sm:mt-0"
       />
 
-      <ProfileInfo userInfo={userInfo} onLogout={onLogout} className="mt-4 sm:mt-0" />  {/* Added margin-top for small screens */}
+      <ProfileInfo userInfo={userInfo} onLogout={onLogout} className="mt-4 sm:mt-0" />
     </div>
   );
 }
