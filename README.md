@@ -41,7 +41,7 @@ cd notesphere
 
 3. **Start the development server**
 # Terminal 1 - start backend
--cd server
+- cd server
 - npm run dev
 
 # Terminal 2 - start frontend
