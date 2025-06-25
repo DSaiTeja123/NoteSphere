@@ -27,26 +27,36 @@ A secure and responsive full-stack note-taking application built with the **MERN
 ## 📦 Installation
 
 1. **Clone the repository**
-git clone https://github.com/DSaiTeja123/NoteSphere
-cd notesphere
+- git clone https://github.com/DSaiTeja123/NoteSphere
+- cd notesphere
 
 2. **Install dependencies**
-# Install client dependencies
-- cd client
-- npm install
 
-# Install server dependencies
-- cd server
-- npm install
+**Install client dependencies**
+```bash
+cd client
+npm install
+```
+
+**Install server dependencies**
+```bash
+cd server
+npm install
+```
 
 3. **Start the development server**
-# Terminal 1 - start backend
-- cd server
-- npm run dev
 
-# Terminal 2 - start frontend
-- cd client
-- npm start
+**Terminal 1 - start backend**
+```bash
+cd server
+npm start
+```
+
+**Terminal 2 - start frontend**
+```bash
+cd client
+npm run dev
+```
 
 4. **Open in your browser:**  
 [http://localhost:5173](http://localhost:5173)
